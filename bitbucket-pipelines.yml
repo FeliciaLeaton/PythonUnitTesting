@@ -13,9 +13,9 @@ pipelines:
           caches:
             - pip
           script:
-            - if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-            - pip install pytest
-            - pytest -v tests/* --junitxml=test-reports/report.xml
+            - echo "test step"
+            #- pip install pytest
+            #- pytest -v tests/* --junitxml=test-reports/report.xml
       - step:
           name: Lint code
           script:
@@ -28,6 +28,7 @@ pipelines:
     # trigger: manual  # Uncomment to make this a manual deployment.
           script:
             - echo "Deploying to test environment"
+            - if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
             - ls
             - python project3.py 
 
