@@ -4,6 +4,7 @@ import requests
 import json
 import datetime
 import time as timemod
+import matplotlib.pyplot as plt
 
 api_key = "65210ZZ38CVFIWM4"
 #api docs https://www.alphavantage.co/documentation/
@@ -140,6 +141,12 @@ while (do_program):
     #   individual data to different lists.
     # for loop to transfer data from apidata dictionary to newdata dictionary and then transfer
     #   individual data to different lists.
+    
+    plt.bar(start_data)
+    plt.bar(end_data)
+    plt.show()
+    
+    
     for key, value in apidata[time].items():
         datedata = list(apidata[time].keys())
         x+=1
