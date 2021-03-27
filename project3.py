@@ -78,7 +78,10 @@ while (do_program):
     chart_type = input("Enter the chart type you want (1 , 2):")
     #make sure it's 1 or 2, while loop > error handling
    
-        
+    #error handling chart type
+    if (chart_type != '1' or chart_type != '2'):
+       print("\nPlease try again! Pick number 1 or 2")
+      
 
     print("\nSelect the Time Series of chart you want to Generate\n=================================================================")
     print("\n1. Intraday\n2. Daily\n3. Weekly\n4. Monthly")
@@ -195,8 +198,6 @@ while (do_program):
         line_chart.add('Close', convert(closeddata))
         line_chart.render_in_browser() 
         pass
-
-
 
 
     #after everything is pretty much toss it all in a while loop so user can re run a visualizaiton
